@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Login = () => {
     return(
         <div>
-            Login page
+            <h1>Login page</h1>
             <p>
                 Don't have an account? <Link to="/register">Register</Link>
             </p>
