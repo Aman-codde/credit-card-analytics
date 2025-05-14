@@ -1,12 +1,16 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import { connectToMongoDB } from './config/db.js';
-import './config/loadEnv.js';
+import authRoutes from "./routes/authRoutes.js";
 
 dotenv.config();
 
 const PORT = process.env.PORT;
 const app = express();
+
+app.use(express.json());
+
+app.use('/api/auth',authRoutes);
 
 //connect to mongodb
 connectToMongoDB();
